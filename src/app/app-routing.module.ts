@@ -7,15 +7,30 @@ import {MonitorComponent} from './monitor/monitor.component';
 import {IndividualReportComponent} from './individual-report/individual-report.component';
 import {GeneralReportComponent} from './general-report/general-report.component';
 import {RegistrationComponent} from './registration/registration.component';
+import {ShellComponent} from './shell/shell.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'home', component: ShellComponent, children: [
+      {
+        path: 'acompanhamento',
+        component: MonitorComponent
+      },
+      {
+        path: 'relatorio-individual',
+        component: IndividualReportComponent
+      },
+      {
+        path: 'relatorio-geral',
+        component: GeneralReportComponent
+      },
+      {
+        path: 'cadastro',
+        component: RegistrationComponent
+      },
+    ] },
+  { path: 'login', component: LoginComponent },
   { path: 'recovery', component: ForgotPasswordComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'acompanhamento', component: MonitorComponent },
-  { path: 'relatorio-individual', component: IndividualReportComponent },
-  { path: 'relatorio-geral', component: GeneralReportComponent },
-  { path: 'cadastro', component: RegistrationComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -10,15 +10,15 @@
   <div class="sidebar">
     <div class="head">
       <div class="logo">
-        <img src="./assets/images/logo.png" alt="Logo">
+        <img src="./assets/images/logo.png" alt="Logo" routerLink="/home">
       </div>
     </div>
     <div class="nav">
       <div class="menu">
         <ul>
           <!-- ACOMPANHAMENTO -->
-          <li [ngClass]="{'active': activeMenu === 'acompanhamento'}" (click)="setActiveMenu('acompanhamento')">
-            <button routerLink="/acompanhamento" class="menu-button">
+          <li [ngClass]="{'active': activeMenu === 'acompanhamento'}" (click)="setActiveMenu('/home/acompanhamento')">
+            <button routerLink="/home/acompanhamento" class="menu-button">
               <i class="icon material-icons">videocam</i>
               <span class="text">Acompanhamento</span>
             </button>
@@ -35,14 +35,14 @@
             <!-- RELATÓRIO INDIVIDUAL -->
             <ul class="sub-menu" *ngIf="openSubMenu === 'relatorio'">
               <li>
-                <button routerLink="/relatorio-individual" class="menu-button">
+                <button routerLink="/home/relatorio-individual" class="menu-button">
                   <span class="text">Relatório individual</span>
                 </button>
               </li>
 
               <!-- RELATÓRIO GERAL -->
               <li>
-                <button routerLink="/relatorio-geral" class="menu-button">
+                <button routerLink="/home/relatorio-geral" class="menu-button">
                   <span class="text">Relatório geral</span>
                 </button>
               </li>
@@ -52,7 +52,7 @@
 
           <!-- CADASTRO DE FUNCIONÁRIO -->
           <li [ngClass]="{'active': activeMenu === 'cadastro'}" (click)="setActiveMenu('cadastro')">
-            <button routerLink="/cadastro" class="menu-button">
+            <button routerLink="/home/cadastro" class="menu-button">
               <i class="icon material-icons">person_add</i>
               <span class="text">Cadastro</span>
             </button>
@@ -63,3 +63,5 @@
     </div>
   </div>
 </div>
+
+<router-outlet/>
