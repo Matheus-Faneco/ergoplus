@@ -12,9 +12,11 @@ O desenvolvimento da aplicação está em andamento. O **front-end** está sendo
 
 Há um **Dockerfile** do front-end pronto para ser buildado com a imagem da aplicação. Caso tenha interesse em rodar a aplicação localmente.
 
-1. Execute o comando para criar a imagem do Docker:
-   ```bash
+1. Execute o comando no terminal para criar a imagem do Docker:
+   ```
    docker build -t <nome-da-imagem> .
+2. Para criar o container:
+   ```
    docker run -p 80:80 <nome-da-imagem>
 
 
