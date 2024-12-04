@@ -9,6 +9,15 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import { HomeComponent } from './home/home.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MonitorComponent } from './monitor/monitor.component';
+import { ReportComponent } from './report/report.component';
+import { IndividualReportComponent } from './individual-report/individual-report.component';
+import { GeneralReportComponent } from './general-report/general-report.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { UserManualComponent } from './user-manual/user-manual.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +25,13 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     ForgotPasswordComponent,
     HomeComponent,
+    SidebarComponent,
+    MonitorComponent,
+    ReportComponent,
+    IndividualReportComponent,
+    GeneralReportComponent,
+    RegistrationComponent,
+    UserManualComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,8 +40,11 @@ import { HomeComponent } from './home/home.component';
     PaginatorModule,
     InputTextModule,
     ButtonModule,
+    MatSidenavModule,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync('noop')
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
