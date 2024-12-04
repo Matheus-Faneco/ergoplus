@@ -7,3 +7,14 @@ Este projeto está sendo desenvolvido para a Feira de Mostra Tecnológica da Esc
 ## Estado da Aplicação
 
 O desenvolvimento da aplicação está em andamento. O **front-end** está sendo desenvolvido no **Angular**, com funcionalidades ainda em fase de implementação e ajustes.
+
+### Docker
+
+Há um **Dockerfile** do front-end pronto para ser buildado com a imagem da aplicação. Caso tenha interesse em rodar a aplicação localmente.
+
+1. Execute o comando para criar a imagem do Docker:
+   ```bash
+   docker build -t <nome-da-imagem> .
+   docker run -p 80:80 <nome-da-imagem>
+
+
