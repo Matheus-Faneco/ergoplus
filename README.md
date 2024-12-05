@@ -1,27 +1,22 @@
-# Frontend
+# Ergo+
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+## Descrição
 
-## Development server
+Este projeto está sendo desenvolvido para a Feira de Mostra Tecnológica da Escola Tecnológica da FPFtech. O **Ergo+** é um monitorador de postura voltado para empresas, com o objetivo de promover a saúde e o bem-estar dos colaboradores, ajudando a prevenir problemas posturais durante o expediente de trabalho.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Estado da Aplicação
 
-## Code scaffolding
+O desenvolvimento da aplicação está em andamento. O **front-end** está sendo desenvolvido no **Angular**, com funcionalidades ainda em fase de implementação e ajustes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Docker
 
-## Build
+Há um **Dockerfile** do front-end pronto para ser buildado com a imagem da aplicação. Caso tenha interesse em rodar a aplicação localmente.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Execute o comando no terminal para criar a imagem do Docker:
+   ```
+   docker build -t <nome-da-imagem> .
+2. Para criar o container:
+   ```
+   docker run -p 80:80 <nome-da-imagem>
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
