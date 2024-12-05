@@ -8,6 +8,7 @@ import {IndividualReportComponent} from './individual-report/individual-report.c
 import {GeneralReportComponent} from './general-report/general-report.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {ShellComponent} from './shell/shell.component';
+import {UserManualComponent} from './user-manual/user-manual.component';
 
 const routes: Routes = [
   { path: 'home', component: ShellComponent, children: [
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'cadastro',
         component: RegistrationComponent
+      },
+      {
+        path: 'manual',
+        component: UserManualComponent
       },
     ] },
   { path: 'login', component: LoginComponent },

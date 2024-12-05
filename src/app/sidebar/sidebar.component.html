@@ -1,10 +1,9 @@
 <!--O QUE FAZER: -->
 <!--TROCAR CONDICIONAIS PARA @IF-->
-<!--SIDEBAR PRECISA APARECER EM TODAS AS ABAS COM EXCEÇÃO DA TELA DE LOGIN-->
-<!--COMPONENT DE MANUAL DO USUÁRIO-->
 <!--MELHORIAS:-->
 <!--COR AZUL SE MANTER AO ESTAR NA ABA CORRESPONDENTE-->
 <!--ANIMAÇAO QUANDO OS SUBMENUS APARECEREM AO CLICAR EM 'RELATORIO'-->
+<!--BOTÃO DE MANUAL DE USUÁRIO LÁ EMBAIXO-->
 
 <div class="container">
   <div class="sidebar">
@@ -55,6 +54,14 @@
             <button routerLink="/home/cadastro" class="menu-button">
               <i class="icon material-icons">person_add</i>
               <span class="text">Cadastro</span>
+            </button>
+          </li>
+
+          <!-- MANUAL DO USUÁRIO -->
+          <li [ngClass]="{'active': activeMenu === 'manual'}" (click)="setActiveMenu('manual')">
+            <button routerLink="/home/manual" class="menu-button">
+              <i class="icon material-icons">help</i>
+              <span class="text-guide">Manual do usuário</span>
             </button>
           </li>
 
