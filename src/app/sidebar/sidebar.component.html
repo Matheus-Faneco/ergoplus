@@ -16,7 +16,7 @@
       <div class="menu">
         <ul>
           <!-- ACOMPANHAMENTO -->
-          <li [ngClass]="{'active': activeMenu === 'acompanhamento'}" (click)="setActiveMenu('/home/acompanhamento')">
+          <li >
             <button routerLink="/home/acompanhamento" class="menu-button">
               <i class="icon material-icons">videocam</i>
               <span class="text">Acompanhamento</span>
@@ -24,7 +24,7 @@
           </li>
 
           <!-- RELATÓRIO -->
-          <li [ngClass]="{'active': activeMenu === 'relatorio'}">
+          <li>
             <button class="menu-button" (click)="toggleSubMenu('relatorio')">
               <i class="icon material-icons">description</i>
               <span class="text">Relatório</span>
@@ -50,7 +50,7 @@
           </li>
 
           <!-- CADASTRO DE FUNCIONÁRIO -->
-          <li [ngClass]="{'active': activeMenu === 'cadastro'}" (click)="setActiveMenu('cadastro')">
+          <li>
             <button routerLink="/home/cadastro" class="menu-button">
               <i class="icon material-icons">person_add</i>
               <span class="text">Cadastro</span>
@@ -58,7 +58,7 @@
           </li>
 
           <!-- MANUAL DO USUÁRIO -->
-          <li [ngClass]="{'active': activeMenu === 'manual'}" (click)="setActiveMenu('manual')">
+          <li>
             <button routerLink="/home/manual" class="menu-button">
               <i class="icon material-icons">help</i>
               <span class="text-guide">Manual do usuário</span>

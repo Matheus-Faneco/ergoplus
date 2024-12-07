@@ -1,6 +1,6 @@
-.teste {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-start;
+.camera-square-one {
+  height: 50px;
+  width: 50px;
+  background-color: red;
+  border-radius: 5px;
 }
