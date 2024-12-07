@@ -7,11 +7,11 @@ import {MonitorComponent} from './monitor/monitor.component';
 import {IndividualReportComponent} from './individual-report/individual-report.component';
 import {GeneralReportComponent} from './general-report/general-report.component';
 import {RegistrationComponent} from './registration/registration.component';
-import {ShellComponent} from './shell/shell.component';
 import {UserManualComponent} from './user-manual/user-manual.component';
+import {SidebarComponent} from './sidebar/sidebar.component';
 
 const routes: Routes = [
-  { path: 'home', component: ShellComponent, children: [
+  { path: 'home', component: SidebarComponent, children: [
       {
         path: 'acompanhamento',
         component: MonitorComponent

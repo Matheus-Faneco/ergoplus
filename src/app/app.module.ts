@@ -18,7 +18,7 @@ import { IndividualReportComponent } from './individual-report/individual-report
 import { GeneralReportComponent } from './general-report/general-report.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserManualComponent } from './user-manual/user-manual.component';
-import { ShellComponent } from './shell/shell.component';
+import {MatButton} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,6 @@ import { ShellComponent } from './shell/shell.component';
     GeneralReportComponent,
     RegistrationComponent,
     UserManualComponent,
-    ShellComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +42,7 @@ import { ShellComponent } from './shell/shell.component';
     InputTextModule,
     ButtonModule,
     MatSidenavModule,
+    MatButton,
   ],
   providers: [
     provideAnimationsAsync('noop')

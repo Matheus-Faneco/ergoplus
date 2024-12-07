@@ -11,17 +11,18 @@
   padding: 24px;
   border-radius: 10px;
 }
+
+
 .sidebar .logo {
   display: flex;
-  gap: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #f6f6f6
 }
+
 .logo {
   width: 64px;
   height: 64px;
   cursor: pointer;
 }
+
 
 .menu ul li {
   list-style: none;
@@ -59,12 +60,20 @@
   flex: 1;
 }
 
-/*LINHA*/
+/*LINHA DIVISÓRIA*/
 .menu .sub-menu {
   margin-left: 28px;
   padding-left: 28px;
   padding-top: 5px;
   border-left: 2px solid #f6f6f6;
+}
+
+.main-content {
+  margin-left: 270px; /* Espaço para evitar sobreposição com a sidebar */
+  flex: 1; /* Faz o conteúdo ocupar o espaço restante */
+  padding: 20px; /* Adiciona espaçamento interno */
+  border-radius: 10px;
+  overflow-y: auto;
 }
 
 
