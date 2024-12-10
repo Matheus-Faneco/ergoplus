@@ -1,0 +1,48 @@
+<h1 class="title">Relatório individual</h1>
+<div class="container">
+  <!-- Seção Superior -->
+  <div class="top-section">
+    <!-- POSTURA ATUAL -->
+    <mat-card class="card">
+      <span class="text">Postura atual</span>
+      <div class="content">
+        <p class="current-posture">{{ getCurrentPosture() }}</p>
+      </div>
+    </mat-card>
+
+    <!-- TOTAL DE ALERTAS -->
+    <mat-card class="card">
+      <span class="text">Total de alertas</span>
+      <div class="content">
+        <p class="alert-number">{{ getAlertNumber() }}</p>
+      </div>
+    </mat-card>
+
+    <!-- TEMPO TOTAL EM MÁ POSTURA -->
+    <mat-card class="card">
+      <span class="text">Tempo total de má postura</span>
+      <div class="content">
+        <p class="time-bad-posture">{{ getTotalTimeBadPosture() }}</p>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- Seção Inferior -->
+  <div class="bottom-section">
+    <!-- HISTÓRICO -->
+    <mat-card class="card-bottom">
+      <span class="text-bottom">Histórico</span>
+      <div class="content-bottom">
+        <p>Histórico detalhado aparecerá aqui.</p>
+      </div>
+    </mat-card>
+
+    <!-- GRÁFICO DE DESEMPENHO -->
+    <mat-card class="card-bottom">
+      <span class="text-bottom">Desempenho de postura</span>
+      <div class="content-bottom">
+        <canvas #canvas></canvas>
+      </div>
+    </mat-card>
+  </div>
+</div>

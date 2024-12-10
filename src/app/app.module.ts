@@ -19,6 +19,7 @@ import { GeneralReportComponent } from './general-report/general-report.componen
 import { RegistrationComponent } from './registration/registration.component';
 import { UserManualComponent } from './user-manual/user-manual.component';
 import {MatButton} from '@angular/material/button';
+import {MatCard} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {MatButton} from '@angular/material/button';
     ButtonModule,
     MatSidenavModule,
     MatButton,
+    MatCard,
   ],
   providers: [
     provideAnimationsAsync('noop')
