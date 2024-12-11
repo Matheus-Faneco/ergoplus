@@ -75,12 +75,3 @@
   color: #333;
 }
 
-.content-bottom {
-  margin-top: 50px;
-  width: 100%;
-  height: calc(100% - 60px);
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

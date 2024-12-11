@@ -36,3 +36,15 @@
   text-align: center;
   background-color: #168BF2;
 }
+
+.content-bottom {
+  overflow: auto;
+  width: 100%;
+  height: calc(100% - 60px);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  align-items: center;
+  justify-content: flex-start;
+}

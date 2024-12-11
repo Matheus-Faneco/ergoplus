@@ -20,6 +20,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { UserManualComponent } from './user-manual/user-manual.component';
 import {MatButton} from '@angular/material/button';
 import {MatCard} from '@angular/material/card';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {MatCard} from '@angular/material/card';
     MatSidenavModule,
     MatButton,
     MatCard,
+    TableModule,
   ],
   providers: [
     provideAnimationsAsync('noop')

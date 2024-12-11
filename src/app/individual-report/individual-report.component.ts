@@ -1,5 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Chart} from 'chart.js';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-individual-report',
@@ -8,25 +7,17 @@ import {Chart} from 'chart.js';
 })
 export class IndividualReportComponent implements OnInit {
   currentPosture: string = "Correto";
-  alertNumber: number = 0
+  alertNumber: number = 0;
   totalTimeBadPosture: number = 0;
-  @ViewChild("canvas", { static: true }) element?: ElementRef;
+  historyData: Array<{ date: string; duration: number }> = [];
+
+
   ngOnInit() {
     // Métodos de exemplo para depois implementar resultados que vierem da API
     this.getAlertNumber()
     this.getCurrentPosture()
     this.getTotalTimeBadPosture()
-    new Chart(this.element?.nativeElement, {
-      type: 'line',
-      data: {
-        labels: ["janeiro", "fevereiro", "março"],
-        datasets: [
-          {
-            data: [20,30,40]
-          }
-        ]
-      }
-    });
+    this.loadHistoryData()
   }
 
   // TOTAL DE ALERTAS
@@ -41,4 +32,14 @@ export class IndividualReportComponent implements OnInit {
   getTotalTimeBadPosture(): number {
     return this.totalTimeBadPosture;
   }
+
+  loadHistoryData() {
+    this.historyData = [
+      { date: '2024-12-01', duration: 15 },
+      { date: '2024-12-01', duration: 23 },
+      { date: '2024-12-01', duration: 12 },
+      { date: '2024-12-01', duration: 2 },
+    ];
+  }
+
 }
