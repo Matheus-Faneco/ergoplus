@@ -21,6 +21,8 @@ import { UserManualComponent } from './user-manual/user-manual.component';
 import {MatButton} from '@angular/material/button';
 import {MatCard} from '@angular/material/card';
 import {TableModule} from 'primeng/table';
+import { ChartComponent } from './chart/chart.component';
+import {ChartModule} from "primeng/chart";
 
 @NgModule({
   declarations: [
@@ -35,19 +37,21 @@ import {TableModule} from 'primeng/table';
     GeneralReportComponent,
     RegistrationComponent,
     UserManualComponent,
+    ChartComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    PasswordModule,
-    PaginatorModule,
-    InputTextModule,
-    ButtonModule,
-    MatSidenavModule,
-    MatButton,
-    MatCard,
-    TableModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        PasswordModule,
+        PaginatorModule,
+        InputTextModule,
+        ButtonModule,
+        MatSidenavModule,
+        MatButton,
+        MatCard,
+        TableModule,
+        ChartModule,
+    ],
   providers: [
     provideAnimationsAsync('noop')
   ],
