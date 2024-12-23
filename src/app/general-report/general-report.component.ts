@@ -7,18 +7,21 @@ import {Component, OnInit} from '@angular/core';
 })
 export class GeneralReportComponent implements OnInit{
   totalAlertsGeneral: number = 0;
-  averageTimeBadPosture: number = 0;
+  averageTime: number = 0;
+
 
   ngOnInit() {
     this.getTotalAlertsGeneral()
-    this.getAverageTimeBadPosture()
+    this.getAverageTime()
   }
 
   getTotalAlertsGeneral (): number {
     return this.totalAlertsGeneral;
   }
 
-  getAverageTimeBadPosture (): number {
-    return this.averageTimeBadPosture;
+  getAverageTime(): number{
+    return this.averageTime;
   }
+
+
 }

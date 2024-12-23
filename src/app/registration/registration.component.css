@@ -1,0 +1,16 @@
+.title {
+  color: #7B8290;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 90px;
+  width: 80vw;
+  height: 40vw;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  background-color: #ffffff;
+  position: relative;
+}

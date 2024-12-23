@@ -56,9 +56,16 @@
   color: #7B8290;
 }
 
-.current-posture, .alert-number, .time-bad-posture {
+.total-alerts, .observation, .time-bad-posture {
   margin-bottom: 20px;
   color: #ffffff;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.average-time {
+  margin-bottom: 20px;
+  color: #000000;
   font-size: 70px;
   font-weight: bold;
 }
@@ -73,5 +80,16 @@
   justify-content: center;
   align-items: center;
   color: #333;
+}
+
+.content-bottom {
+  margin-top: 50px;
+  width: 100%;
+  height: calc(100% - 60px);
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 

@@ -1,4 +1,4 @@
-<h1 class="title">Relatório individual</h1>
+<h1 class="title">Relatório Geral</h1>
 <div class="container">
   <!-- Seção Superior -->
   <div class="top-section">
@@ -6,25 +6,27 @@
     <mat-card class="card">
       <span class="text">Total de alertas</span>
       <div class="content">
-        <p class="current-posture">{{ getTotalAlertsGeneral() }}</p>
+        <p class="total-alerts">{{ getTotalAlertsGeneral() }}</p>
       </div>
     </mat-card>
 
-    <!-- MÉDIA GERAL DE SEGUNDOS -->
+    <!-- OBSERVAÇÕES -->
     <mat-card class="card">
-      <span class="text">Média geral de segundos</span>
+      <span class="text">Observações</span>
       <div class="content">
-        <p class="alert-number">{{ getAverageTimeBadPosture() }}</p>
+        <p class="observation">teste</p>
       </div>
     </mat-card>
+  </div>
+  <!-- Fim da Seção Superior -->
 
   <!-- Seção Inferior -->
   <div class="bottom-section">
-    <!-- OBSERVAÇÕES -->
+    <!-- MÉDIA GERAL -->
     <mat-card class="card-bottom">
-      <span class="text-bottom">Histórico</span>
+      <span class="text-bottom">Média geral de segundos</span>
       <div class="content-bottom">
-
+        <p class="average-time">{{ getAverageTime() }}</p>
       </div>
     </mat-card>
 
