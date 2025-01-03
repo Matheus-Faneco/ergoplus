@@ -23,5 +23,15 @@ export class GeneralReportComponent implements OnInit{
     return this.averageTime;
   }
 
+  openSubMenu: string | null = null;
+
+
+  toggleSubMenu(subMenuName: string) {
+    if (this.openSubMenu === subMenuName) {
+      this.openSubMenu = null;
+    } else {
+      this.openSubMenu = subMenuName;
+    }
+  }
 
 }

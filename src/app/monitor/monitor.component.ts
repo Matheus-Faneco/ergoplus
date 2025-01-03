@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './monitor.component.css'
 })
 export class MonitorComponent {
+  openSubMenu: string | null = null;
 
+
+  toggleSubMenu(subMenuName: string) {
+    if (this.openSubMenu === subMenuName) {
+      this.openSubMenu = null;
+    } else {
+      this.openSubMenu = subMenuName;
+    }
+  }
 }

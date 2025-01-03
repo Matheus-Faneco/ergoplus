@@ -23,6 +23,7 @@ import {MatCard} from '@angular/material/card';
 import {TableModule} from 'primeng/table';
 import { ChartComponent } from './chart/chart.component';
 import {ChartModule} from "primeng/chart";
+import { UserPerfilComponent } from './user-perfil/user-perfil.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {ChartModule} from "primeng/chart";
     RegistrationComponent,
     UserManualComponent,
     ChartComponent,
+    UserPerfilComponent,
   ],
     imports: [
         BrowserModule,

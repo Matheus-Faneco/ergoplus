@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './registration.component.css'
 })
 export class RegistrationComponent {
+  openSubMenu: string | null = null;
 
+
+  toggleSubMenu(subMenuName: string) {
+    if (this.openSubMenu === subMenuName) {
+      this.openSubMenu = null;
+    } else {
+      this.openSubMenu = subMenuName;
+    }
+  }
 }

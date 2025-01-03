@@ -9,6 +9,7 @@ import {GeneralReportComponent} from './general-report/general-report.component'
 import {RegistrationComponent} from './registration/registration.component';
 import {UserManualComponent} from './user-manual/user-manual.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
+import {UserPerfilComponent} from './user-perfil/user-perfil.component';
 
 const routes: Routes = [
   { path: 'home', component: SidebarComponent, children: [
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'manual',
         component: UserManualComponent
+      },
+      {
+        path: 'perfil',
+        component: UserPerfilComponent
       },
     ] },
   { path: 'login', component: LoginComponent },

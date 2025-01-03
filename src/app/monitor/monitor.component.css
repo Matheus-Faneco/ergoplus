@@ -52,3 +52,50 @@
   align-items: center;
   justify-content: flex-start;
 }
+
+.menu-button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 10%;
+  font-size: 16px;
+  font-weight: 300;
+  color: #757575;
+  margin-left: 90%;
+  margin-top: -50px;
+}
+.perfil {
+  max-width: 50%;
+  margin-left: -60%;
+  display:flex;
+}
+
+.menu-button .icon {
+  margin-left: 130px;
+}
+
+.menu-button .icon:hover {
+  color: #055FFC;
+}
+
+.sub-menu {
+  list-style: none;
+}
+.li-1{
+  margin-top: 28px;
+}
+.li-1 span:hover{
+  color: #055FFC;
+}
+
+.li-2{
+  margin-top: 68px;
+}
+.li-2 span:hover{
+  color: #055FFC;
+}
+
+
+
+
