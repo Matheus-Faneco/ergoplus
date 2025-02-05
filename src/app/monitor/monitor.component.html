@@ -9,16 +9,16 @@
   <!-- CAMERA 1 -->
   <mat-card class="camera-card">
     <div class="camera-square">
-      <video id="camera-preview" autoplay></video>
+      <video id="camera-preview-1" autoplay></video>
     </div>
-    <button mat-flat-button color="warn" class="button" (click)="startCamera()">Iniciar</button>
+    <button mat-flat-button color="warn" class="button" (click)="startCamera(1)">Iniciar</button>
   </mat-card>
 
   <!-- CAMERA 2 -->
   <mat-card class="camera-card">
     <div class="camera-square">
-      <span class="text">camera 2</span>
+      <video id="camera-preview-2" autoplay></video>
     </div>
-    <button mat-flat-button color="warn" class="button">Iniciar</button>
+    <button mat-flat-button color="warn" class="button"(click)="startCamera(2)">Iniciar</button>
   </mat-card>
 </div>
