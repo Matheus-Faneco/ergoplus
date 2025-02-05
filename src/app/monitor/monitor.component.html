@@ -1,29 +1,9 @@
 <h1 class="title">Acompanhamento</h1>
 
-
 <button class="menu-button" (click)="toggleSubMenu('perfil')">
   <img src="assets/images/perfil.png" class="perfil" >
   <span class="text">Fulano da Silva</span>
-  <i class="icon material-icons">keyboard_arrow_down</i>
 </button>
-
-
-<ul class="sub-menu" *ngIf="openSubMenu === 'perfil'">
-  <!-- Pefil de Usuario -->
-  <li class="li-1">
-    <button routerLink="/home/perfil" class="menu-button">
-      <span class="text">Meu Perfil</span>
-    </button>
-  </li>
-  <!-- Sair -->
-  <li class="li-2">
-    <button routerLink="/login" class="menu-button">
-      <span class="text">Sair</span>
-    </button>
-  </li>
-</ul>
-
-
 
 <div class="container">
   <!-- CAMERA 1 -->
