@@ -6,14 +6,18 @@ import { Component } from '@angular/core';
   styleUrl: './monitor.component.css'
 })
 export class MonitorComponent {
-  openSubMenu: string | null = null;
 
+  async startCamera() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true});
 
-  toggleSubMenu(subMenuName: string) {
-    if (this.openSubMenu === subMenuName) {
-      this.openSubMenu = null;
-    } else {
-      this.openSubMenu = subMenuName;
+      const videoELement = document.getElementById('camera-preview') as HTMLVideoElement;
+      videoELement.srcObject = stream;
+      videoELement.play();
+    } catch (error) {
+      console.error("erro ao acessar a camera:", error);
     }
   }
+
 }

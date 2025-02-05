@@ -9,9 +9,9 @@
   <!-- CAMERA 1 -->
   <mat-card class="camera-card">
     <div class="camera-square">
-      <span class="text">camera 1</span>
+      <video id="camera-preview" autoplay></video>
     </div>
-    <button mat-flat-button color="warn" class="button">Iniciar</button>
+    <button mat-flat-button color="warn" class="button" (click)="startCamera()">Iniciar</button>
   </mat-card>
 
   <!-- CAMERA 2 -->
