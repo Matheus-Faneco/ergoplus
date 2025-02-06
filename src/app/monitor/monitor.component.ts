@@ -12,11 +12,6 @@ export class MonitorComponent {
       const devices = await navigator.mediaDevices.enumerateDevices();
       const videoDevices = devices.filter(device => device.kind === 'videoinput');
 
-      if (videoDevices.length < 2) {
-        console.error("Menos de duas câmeras disponíveis.");
-        return;
-      }
-
       console.log("Dispositivos de vídeo encontrados:", videoDevices);
 
       let stream: MediaStream | null = null;
