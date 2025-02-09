@@ -6,19 +6,34 @@
 </button>
 
 <div class="container">
-  <!-- CAMERA 1 -->
+
+
   <mat-card class="camera-card">
     <div class="camera-square">
       <video id="camera-preview-1" autoplay></video>
     </div>
-    <button mat-flat-button color="warn" class="button" (click)="startCamera(1)">Iniciar</button>
+    <video #videoElement1 class="video" playsinline></video>
+    <canvas #canvasElement1 class="overlay"></canvas>
+    <button mat-flat-button color="warn" class="button" (click)="isDetecting ? stopDetection() : startDetection()">
+      {{ isDetecting ? 'Parar Detecção' : 'Iniciar Detecção' }}
+    </button>
   </mat-card>
 
-  <!-- CAMERA 2 -->
   <mat-card class="camera-card">
     <div class="camera-square">
       <video id="camera-preview-2" autoplay></video>
     </div>
-    <button mat-flat-button color="warn" class="button"(click)="startCamera(2)">Iniciar</button>
+    <video #videoElement2 class="video" playsinline></video>
+    <canvas #canvasElement2 class="overlay"></canvas>
+    <button mat-flat-button color="warn" class="button" (click)="isDetecting ? stopDetection() : startDetection()">
+      {{ isDetecting ? 'Parar Detecção' : 'Iniciar Detecção' }}
+    </button>
+
   </mat-card>
+
+
 </div>
+
+
+
+

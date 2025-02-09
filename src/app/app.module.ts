@@ -25,6 +25,7 @@ import { ChartComponent } from './chart/chart.component';
 import {ChartModule} from "primeng/chart";
 import { UserPerfilComponent } from './user-perfil/user-perfil.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,6 @@ import { UserPerfilComponent } from './user-perfil/user-perfil.component';
     ForgotPasswordComponent,
     HomeComponent,
     SidebarComponent,
-    MonitorComponent,
     ReportComponent,
     IndividualReportComponent,
     GeneralReportComponent,
@@ -40,20 +40,22 @@ import { UserPerfilComponent } from './user-perfil/user-perfil.component';
     UserManualComponent,
     ChartComponent,
     UserPerfilComponent,
+
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        PasswordModule,
-        PaginatorModule,
-        InputTextModule,
-        ButtonModule,
-        MatSidenavModule,
-        MatButton,
-        MatCard,
-        TableModule,
-        ChartModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    PasswordModule,
+    PaginatorModule,
+    InputTextModule,
+    ButtonModule,
+    MatSidenavModule,
+    MatButton,
+    MatCard,
+    TableModule,
+    ChartModule,
+    MonitorComponent,
+  ],
   providers: [
     provideAnimationsAsync('noop')
   ],
