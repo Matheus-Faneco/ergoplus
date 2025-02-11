@@ -40,6 +40,7 @@ import { UserPerfilComponent } from './user-perfil/user-perfil.component';
     UserManualComponent,
     ChartComponent,
     UserPerfilComponent,
+    MonitorComponent,
 
   ],
   imports: [
@@ -54,7 +55,6 @@ import { UserPerfilComponent } from './user-perfil/user-perfil.component';
     MatCard,
     TableModule,
     ChartModule,
-    MonitorComponent,
   ],
   providers: [
     provideAnimationsAsync('noop')

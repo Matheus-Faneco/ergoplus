@@ -1,73 +1,10 @@
-// import { Component} from '@angular/core';
-// import {MatCard} from '@angular/material/card';
-//
-// @Component({
-//   selector: 'app-monitor',
-//   templateUrl: './monitor.component.html',
-//   standalone: true,
-//   imports: [
-//     MatCard
-//   ],
-//   styleUrl: './monitor.component.css'
-// })
-// export class MonitorComponent {
-//
-//   async startCamera(cameraNumber: number) {
-//     try {
-//       const devices = await navigator.mediaDevices.enumerateDevices();
-//       const videoDevices = devices.filter(device => device.kind === 'videoinput');
-//
-//       console.log("Dispositivos de vídeo encontrados:", videoDevices);
-//
-//       let stream: MediaStream | null = null;
-//
-//       if (cameraNumber === 1) {
-//         stream = await navigator.mediaDevices.getUserMedia({
-//           video: { deviceId: videoDevices[0].deviceId }
-//         });
-//
-//         const videoElement1 = document.getElementById('camera-preview-1') as HTMLVideoElement;
-//         if (videoElement1.srcObject !== stream) {
-//           videoElement1.srcObject = stream;
-//           videoElement1.play();
-//         }
-//
-//       } else if (cameraNumber === 2) {
-//         stream = await navigator.mediaDevices.getUserMedia({
-//           video: { deviceId: videoDevices[1].deviceId }
-//         });
-//
-//         const videoElement2 = document.getElementById('camera-preview-2') as HTMLVideoElement;
-//         if (videoElement2.srcObject !== stream) {
-//           videoElement2.srcObject = stream;
-//           videoElement2.play();
-//         }
-//       }
-//
-//     } catch (error) {
-//       console.error("Erro ao acessar as câmeras:", error);
-//     }
-//   }
-//
-//
-//
-//
-//
-// }
 import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import * as tf from '@tensorflow/tfjs-core';
 import * as poseDetection from '@tensorflow-models/pose-detection';
-import {MatCard} from '@angular/material/card';
-import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-monitor',
   templateUrl: './monitor.component.html',
-  standalone: true,
-  imports: [
-    MatCard,
-    MatButton
-  ],
   styleUrl: './monitor.component.css'
 })
 export class MonitorComponent implements OnInit, OnDestroy {
@@ -128,7 +65,6 @@ export class MonitorComponent implements OnInit, OnDestroy {
       // Verifique se temos pelo menos duas câmeras
       if (videoDevices.length < 2) {
         console.error("É necessário pelo menos duas câmeras!");
-        return;
       }
 
       const video1 = this.videoElement1.nativeElement;
@@ -215,14 +151,21 @@ export class MonitorComponent implements OnInit, OnDestroy {
     if (poses.length > 0) {
       const keypoints = poses[0].keypoints;
 
-      keypoints.forEach(keypoint => {
-        if (keypoint.score! > 0.3) {
+      const drawPoint = (point: any, color: string) => {
+        if (point && point.score! > 0.1) {
           ctx.beginPath();
-          ctx.arc(keypoint.x, keypoint.y, 5, 0, 2 * Math.PI);
-          ctx.fillStyle = 'red';
+          ctx.arc(point.x, point.y, 5, 0, 2 * Math.PI);
+          ctx.fillStyle = color;
           ctx.fill();
         }
-      });
+      };
+
+      // Desenhando os ombros
+      const shoulderLeft = keypoints.find(point => point.name === 'left_shoulder');
+      const shoulderRight = keypoints.find(point => point.name === 'right_shoulder');
+
+      drawPoint(shoulderLeft, 'blue');  // Ombro esquerdo
+      drawPoint(shoulderRight, 'green'); // Ombro direito
     }
   }
 
