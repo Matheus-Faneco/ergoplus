@@ -2,6 +2,8 @@ import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core
 import * as tf from '@tensorflow/tfjs-core';
 import * as poseDetection from '@tensorflow-models/pose-detection';
 
+declare const cv: any;
+
 @Component({
   selector: 'app-monitor',
   templateUrl: './monitor.component.html',
@@ -115,7 +117,11 @@ export class MonitorComponent implements OnInit, OnDestroy {
     try {
       const video1 = this.videoElement1.nativeElement;
       const poses1 = await this.detector.estimatePoses(video1);
+
       this.drawKeypoints(poses1, this.canvasElement1.nativeElement);
+      const src = cv.imread(video1);
+      this.detectColor(src);
+      src.delete();
     } catch (error) {
     }
 
@@ -129,18 +135,68 @@ export class MonitorComponent implements OnInit, OnDestroy {
       const video2 = this.videoElement2.nativeElement;
       const poses2 = await this.detector.estimatePoses(video2);
 
-      // Verifique se o resultado da detecção não é nulo
-      if (poses2 && poses2.length > 0) {
-        this.drawKeypoints(poses2, this.canvasElement2.nativeElement);
-      } else {
+      this.drawKeypoints(poses2, this.canvasElement2.nativeElement);
+      const src = cv.imread(video2);
+      this.detectColor(src);  // Detecta a cor no frame atual
+      src.delete();
 
-      }
     } catch (error) {
-
     }
+
+
 
     this.animationFrameId2 = requestAnimationFrame(() => this.detectFrame2());
   }
+
+  private detectColor(src: any) {
+    // Converte a imagem para o espaço de cor HSV
+    const hsv = new cv.Mat();
+    cv.cvtColor(src, hsv, cv.COLOR_BGR2HSV);
+
+    // Limite inferior e superior para a cor que você deseja detectar (vermelho aqui como exemplo)
+    const lower = new cv.Mat(hsv.rows, hsv.cols, hsv.type(), [0, 0, 200]); // Limite inferior de cor
+    const upper = new cv.Mat(hsv.rows, hsv.cols, hsv.type(), [180, 60, 255]); // Limite superior de cor
+
+    // Cria a máscara que seleciona a região de interesse (cor vermelha)
+    const mask = new cv.Mat();
+    cv.inRange(hsv, lower, upper, mask);
+
+    // Verifique se a máscara foi criada corretamente
+    console.log('Máscara criada:', mask.data32F.length > 0);
+
+    // Encontrando os contornos na máscara (áreas da cor detectada)
+    const contours = new cv.MatVector();
+    const hierarchy = new cv.Mat();
+    cv.findContours(mask, contours, hierarchy, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE);
+
+    // Verificando se encontramos contornos
+    if (contours.size() > 0) {
+      console.log(`Encontrados ${contours.size()} contornos!`);
+
+      // Desenhando contornos na imagem original
+      for (let i = 0; i < contours.size(); i++) {
+        const contour = contours.get(i);
+        const color = new cv.Scalar(255, 0, 0);  // Azul
+        cv.drawContours(src, contours, i, color, 2, cv.LINE_8, hierarchy, 0);
+
+        // Desenhando um retângulo em torno do contorno detectado
+        const rect = cv.boundingRect(contour);
+        cv.rectangle(src, rect, color, 2);
+      }
+
+      console.log("Cor detectada!");
+    } else {
+      console.log("Nenhuma cor detectada.");
+    }
+
+    // Liberando as matrizes temporárias
+    lower.delete();
+    upper.delete();
+    mask.delete();
+    hierarchy.delete();
+  }
+
+
 
   private drawKeypoints(poses: poseDetection.Pose[], canvas: HTMLCanvasElement) {
     const ctx = canvas.getContext('2d')!;
